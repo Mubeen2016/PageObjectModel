@@ -19,7 +19,10 @@ public class ScreenCastTest {
 	
 	@Before
 	public void testSignup() throws InterruptedException{
-		System.setProperty("webdriver.chrome.driver","C:/Users/mubeen/Documents/ChromeDriver/chromedriver_win32/chromedriver.exe");
+		
+		String workingDir = System.getProperty("user.dir");
+		String chromeDriverLocation = workingDir + "\\chromedriver_w32\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver",chromeDriverLocation);
 		driver = new ChromeDriver();
 		int timeOut = 3;
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS); //have to wait regarless of condition
